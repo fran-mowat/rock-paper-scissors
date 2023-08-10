@@ -18,8 +18,7 @@ let getComputerChoice = () => {
     return computerSelection 
 }
 
-let playGame = (player_selection, computer_selection) => {
-    player_selection = player_selection.toLowerCase()
+let gameOutput = (player_selection, computer_selection) => {
     let result;
     let winner;
     if (player_selection === computer_selection){
@@ -38,25 +37,28 @@ let playGame = (player_selection, computer_selection) => {
 let multiRounds = () => {
     let user_score = 0;
     let computer_score = 0;
-    let round_no = 1;
     let winner = false;
-    for (i=0; i<5; i++){
-        let user_choice = "rock"
-        let game_return = playGame(user_choice, getComputerChoice());
-        result = game_return[0]
-        winner = game_return[1]
-        console.log(result)
+
+    for (roundNumber=1; roundNumber<6; roundNumber++){
+        document.getElementsByTagName("h1").innerHTML = `Round ${roundNumber}`
+        game_return = document.getElementById("rock").addEventListener("click", gameOutput("rock", getComputerChoice()));
+        game_return = document.getElementById("paper").addEventListener("click", gameOutput("paper", getComputerChoice()));
+        game_return = document.getElementById("scissors").addEventListener("click", gameOutput("paper", getComputerChoice()));
+        
+        result = game_return[0];
+        winner = game_return[1];
+        document.getElementById("outcome").innerHTML = result;
+
         if (winner === "user"){
             user_score ++;
         } else if (winner === "computer"){
             computer_score ++;
         } else{
-            //
+            pass;
         }
-        console.log(`Round ${round_no}`);
-        console.log(`    User score: ${user_score}`);
-        console.log(`    Computer score: ${computer_score}`);
-        round_no ++;
+        
+        document.getElementById("user_score").innerHTML =(` User score: ${user_score}`);
+        document.getElementById("computer_score").innerHTML =(` Computer score: ${computer_score}`);
     }
 
     if (user_score > computer_score){
