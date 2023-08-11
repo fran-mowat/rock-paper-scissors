@@ -1,24 +1,33 @@
-let getComputerChoice = () => {
+let generateRand = () => {
     rand = Math.floor(Math.random()*3);
-    let computerSelection;
-    switch(rand){
-        case 0:
-            computerSelection = "rock";
-            break;
-        case 1:
-            computerSelection = "paper";
-            break;
-        case 2: 
-            computerSelection = "scissors";
-            break;
-        default:
-            computerSelection = "error when generating computer choice"
-            break;
-    }
-    return computerSelection 
+    return rand;
 }
 
-let gameOutput = (player_selection, computer_selection) => {
+let numToChoice = (num) => {
+    let choice;
+    switch(num){
+        case 0:
+            choice = "rock";
+            break;
+        case 1:
+            choice = "paper";
+            break;
+        case 2: 
+            choice = "scissors";
+            break;
+        default:
+            choice = "error when generating choice"
+            break;
+    }
+    console.log(choice)
+    return choice 
+}
+
+let computerChoice = () => {
+    return numToChoice(generateRand());
+}
+
+let gameOutcome = (player_selection, computer_selection) => {
     let result;
     let winner;
     if (player_selection === computer_selection){
@@ -37,16 +46,19 @@ let gameOutput = (player_selection, computer_selection) => {
 let multiRounds = () => {
     let user_score = 0;
     let computer_score = 0;
-    let winner = false;
 
     for (roundNumber=1; roundNumber<6; roundNumber++){
         document.getElementsByTagName("h1").innerHTML = `Round ${roundNumber}`
-        game_return = document.getElementById("rock").addEventListener("click", gameOutput("rock", getComputerChoice()));
-        game_return = document.getElementById("paper").addEventListener("click", gameOutput("paper", getComputerChoice()));
-        game_return = document.getElementById("scissors").addEventListener("click", gameOutput("paper", getComputerChoice()));
+
+        //let user_choice = document.getElementById("user_selection").onclick.innerHTML;
+        console.log(user_choice);
+
+        game_return = document.getElementById("rock").addEventListener("click", gameOutcome("rock", getComputerChoice()));
+        game_return = document.getElementById("paper").addEventListener("click", gameOutcome("paper", getComputerChoice()));
+        game_return = document.getElementById("scissors").addEventListener("click", gameOutcome("paper", getComputerChoice()));
         
-        result = game_return[0];
-        winner = game_return[1];
+        let result = game_return[0];
+        let winner = game_return[1];
         document.getElementById("outcome").innerHTML = result;
 
         if (winner === "user"){
