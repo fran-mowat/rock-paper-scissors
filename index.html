@@ -10,9 +10,11 @@
 <body>
     <h1>Round 1</h1>
     <p>Make your choice below:</p>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <div id = "user_selection">
+        <button id="rock" onclick="numToChoice(0)">Rock</button>
+        <button id="paper" onclick="numToChoice(1)">Paper</button>
+        <button id="scissors" onclick="numToChoice(2)">Scissors</button>
+    </div>
 
     <p id="outcome"></p>
     <p id="user_score"></p>
