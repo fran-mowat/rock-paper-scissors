@@ -50,41 +50,19 @@ let gameOutcome = (e) => {
     
     document.getElementById("outcome").innerHTML = result;
     document.getElementById("round_number").innerHTML = Number(document.getElementById("round_number").innerHTML) + 1;
+
+    if (document.getElementById("round_number").innerHTML >= 5){
+        endGame()
+    }
 }
 
-let multiRounds = () => {
-    console.log(getUserChoice());
-    let user_score = 0;
-    let computer_score = 0;
-    for (roundNumber=1; roundNumber<6; roundNumber++){
-        document.getElementsByTagName("h1")[0].innerHTML = `Round ${roundNumber}`
-        if (getUserChoice()){
-            gameOutput = gameOutcome(getUserChoice(), computerChoice())
-        }
-        
-        result = gameOutput[0]
-        winner = gameOutput[1]
-
-        if (winner === "user"){
-            user_score ++;
-        } else if (winner === "computer"){
-            computer_score ++;
-        } else{
-            user_score = user_score;
-            computer_score = computer_score;
-        }
-
-        document.getElementById("user_score").innerHTML =(`User score: ${user_score}`);
-        document.getElementById("computer_score").innerHTML =(`Computer score: ${computer_score}`);
-    }
-
-    
-    if (user_score > computer_score){
-        console.log("Congradulations! You won the game.");
-    } else if (user_score < computer_score){
-        console.log("The computer beat you this time. Try playing again!");
+let endGame = () => {
+    if (Number(document.getElementById("user_score").innerHTML) > Number(document.getElementById("computer_score").innerHTML)){
+        document.getElementById("game_outcome").innerHTML = "Congratulations! You won the game.";
+    } else if (Number(document.getElementById("user_score").innerHTML) < Number(document.getElementById("computer_score").innerHTML)){
+        document.getElementById("game_outcome").innerHTML = "The computer beat you this time. Try playing again!";
     } else{
-        console.log("You drew with the computer. Play again to find out who the real champion is!");
+        document.getElementById("game_outcome").innerHTML = "You drew with the computer. Play again to find out who the real champion is!";
     }
 }
 
