@@ -37,22 +37,19 @@ let gameOutcome = (e) => {
     computer_selection = computerChoice();
 
     let result;
-    let winner;
-
+   
     if (player_selection === computer_selection){
         result = `Both players selected ${player_selection} and therefore the game was a draw.`;
-        winner = false;
     } else if ((player_selection === "scissors" && computer_selection === "rock") || (player_selection === "rock" && computer_selection === "paper") || (player_selection === "paper" && computer_selection === "scissors")){
         result = `You selected ${player_selection}, but the computer selected ${computer_selection}, so the computer wins.`;
-        winner = "computer";
+        document.getElementById("computer_score").innerHTML = Number(document.getElementById("computer_score").innerHTML) + 1;
     } else {
         result = `The computer selected ${computer_selection} and you selected ${player_selection}, so you won!`;
-        winner = "user";
+        document.getElementById("user_score").innerHTML = Number(document.getElementById("user_score").innerHTML) + 1;
     }
     
     document.getElementById("outcome").innerHTML = result;
-
-    return [result, winner]
+    document.getElementById("round_number").innerHTML = Number(document.getElementById("round_number").innerHTML) + 1;
 }
 
 let multiRounds = () => {
@@ -91,5 +88,4 @@ let multiRounds = () => {
     }
 }
 
-//window.onload = multiRounds();
 window.onload = accessUserChoice();
