@@ -64,6 +64,14 @@ let endGame = () => {
     } else{
         document.getElementById("game_outcome").innerHTML = "You drew with the computer. Play again to find out who the real champion is!";
     }
+
+    document.getElementById("user_selection").style.visibility = "hidden";
+    document.getElementsByTagName("p")[0].style.visibility = "hidden";
 }
 
 window.onload = accessUserChoice();
+
+// to do: 
+// - make game end after playing 5 rounds 
+// - generate new game button 
+// - add styles
