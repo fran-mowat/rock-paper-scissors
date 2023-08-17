@@ -1,15 +1,27 @@
-button{
-    font-size: large;
-    margin-left: 20px;
-}
-
 body{
-    margin-left: 20px;
+    margin: auto;
+    text-align: center;
 }
 
 p{
     font-size: large;
     margin-bottom: 20px;
+}
+
+#user_selection p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+button{
+    font-size: large;
+    margin-left: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: black;
+    color: white;
+    border-style: none;
 }
 
 i{
