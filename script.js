@@ -67,14 +67,21 @@ let endGame = () => {
     }
     
     document.getElementById("user_selection").style.visibility = "hidden";
-    document.getElementById("user_selection").style.height = "50px";
+    document.getElementById("user_selection").style.height = "0px";
     document.getElementById("user_selection").style.marginTop = "0px";
     document.getElementById("user_selection").style.marginBottom = "0px";
 
+    document.getElementById("game_result_div").style.visibility = "visible";
+    document.getElementById("game_result_div").style.height = "152px";
+    document.getElementById("game_result_div").style.marginTop = "30px";
+    document.getElementById("game_result_div").style.marginBottom = "25px";
+
+    document.getElementById("play_again").style.visibility = "visible";
+    document.getElementById("play_again").style.height = "60px";
+
     document.getElementById("game_outcome").style.visibility = "visible";
-    document.getElementById("game_outcome").style.height = "110px";
-    document.getElementById("game_outcome").style.marginTop = "0px";
-    document.getElementById("game_outcome").style.marginBottom = "30px";
+    document.getElementById("game_outcome").style.height = "50px";
+    document.getElementById("game_outcome").style.marginTop = "20px";
 
     document.getElementsByTagName("p")[0].style.margin = "0px";
     document.getElementsByTagName("p")[0].style.height = "0px";
