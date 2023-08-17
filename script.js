@@ -49,6 +49,7 @@ let gameOutcome = (e) => {
     }
     
     document.getElementById("outcome").innerHTML = result;
+    document.getElementById("outcome").style.visibility = "visible";
     document.getElementById("round_number").innerHTML = Number(document.getElementById("round_number").innerHTML) + 1;
 
     if (document.getElementById("round_number").innerHTML >= 5){
@@ -64,14 +65,26 @@ let endGame = () => {
     } else{
         document.getElementById("game_outcome").innerHTML = "You drew with the computer. Play again to find out who the real champion is!";
     }
-
+    
     document.getElementById("user_selection").style.visibility = "hidden";
-    document.getElementsByTagName("p")[0].style.visibility = "hidden";
+    document.getElementById("user_selection").style.height = "50px";
+    document.getElementById("user_selection").style.marginTop = "0px";
+    document.getElementById("user_selection").style.marginBottom = "0px";
+
+    document.getElementById("game_outcome").style.visibility = "visible";
+    document.getElementById("game_outcome").style.height = "110px";
+    document.getElementById("game_outcome").style.marginTop = "0px";
+    document.getElementById("game_outcome").style.marginBottom = "30px";
+
+    document.getElementsByTagName("p")[0].style.margin = "0px";
+    document.getElementsByTagName("p")[0].style.height = "0px";
+
+    document.getElementsByTagName("button")[0].style.height = "0px";
+    document.getElementsByTagName("button")[1].style.height = "0px";
+    document.getElementsByTagName("button")[2].style.height = "0px";
+    document.getElementsByTagName("button")[0].style.padding = "0px";
+    document.getElementsByTagName("button")[1].style.padding = "0px";
+    document.getElementsByTagName("button")[2].style.padding = "0px";
 }
 
 window.onload = accessUserChoice();
-
-// to do: 
-// - make game end after playing 5 rounds 
-// - generate new game button 
-// - add styles
