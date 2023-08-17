@@ -1,3 +1,7 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
 body{
     margin: auto;
     text-align: center;
@@ -5,7 +9,17 @@ body{
 
 p{
     font-size: large;
-    margin-bottom: 20px;
+}
+
+#user_selection{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#game_outcome{
+    visibility: hidden;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 #user_selection p{
@@ -15,13 +29,18 @@ p{
 
 button{
     font-size: large;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     height: 100px;
     width: 100px;
     border-radius: 100%;
     background-color: black;
     color: white;
     border-style: none;
+}
+
+#outcome{
+    visibility: hidden;
 }
 
 i{
