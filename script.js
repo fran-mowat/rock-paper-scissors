@@ -50,10 +50,13 @@ let gameOutcome = (e) => {
     
     document.getElementById("outcome").innerHTML = result;
     document.getElementById("outcome").style.visibility = "visible";
+    document.getElementById("outcome").style.height = "40px";
+    document.getElementById("outcome").style.marginTop = "18px";
+    document.getElementById("outcome").style.marginBottom = "18px";
     document.getElementById("round_number").innerHTML = Number(document.getElementById("round_number").innerHTML) + 1;
 
     if (document.getElementById("round_number").innerHTML >= 5){
-        endGame()
+        endGame();
     }
 }
 
@@ -92,6 +95,43 @@ let endGame = () => {
     document.getElementsByTagName("button")[0].style.padding = "0px";
     document.getElementsByTagName("button")[1].style.padding = "0px";
     document.getElementsByTagName("button")[2].style.padding = "0px";
+}
+
+let playAgain = () => {
+    document.getElementById("user_selection").style.visibility = "visible";
+    document.getElementById("user_selection").style.height = "155px";
+    document.getElementById("user_selection").style.marginTop = "30px";
+    document.getElementById("user_selection").style.marginBottom = "25px";
+
+    document.getElementById("game_result_div").style.visibility = "hidden";
+    document.getElementById("game_result_div").style.height = "0px";
+    document.getElementById("game_result_div").style.marginTop = "0px";
+    document.getElementById("game_result_div").style.marginBottom = "0px";
+
+    document.getElementById("play_again").style.visibility = "hidden";
+    document.getElementById("play_again").style.height = "0px";
+
+    document.getElementById("game_outcome").style.visibility = "hidden";
+    document.getElementById("game_outcome").style.height = "0px";
+    document.getElementById("game_outcome").style.marginTop = "0px";
+
+    document.getElementsByTagName("p")[0].style.marginTop = "19.2px";
+    document.getElementsByTagName("p")[0].style.marginBottom = "33px";
+    document.getElementsByTagName("p")[0].style.height = "22px";
+
+    document.getElementsByTagName("button")[0].style.height = "100px";
+    document.getElementsByTagName("button")[1].style.height = "100px";
+    document.getElementsByTagName("button")[2].style.height = "100px";
+    document.getElementsByTagName("button")[0].style.padding = "0px";
+    document.getElementsByTagName("button")[1].style.padding = "0px";
+    document.getElementsByTagName("button")[2].style.padding = "0px";
+
+    document.getElementById("round_number").innerHTML = 1;
+    document.getElementById("user_score").innerHTML = 0;
+    document.getElementById("computer_score").innerHTML = 0;
+    document.getElementById("outcome").style.visibility = "hidden"; 
+    document.getElementById("outcome").style.height = "0px"; 
+    document.getElementById("outcome").style.marginBottom = "18px";
 }
 
 window.onload = accessUserChoice();
