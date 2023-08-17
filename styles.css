@@ -13,13 +13,39 @@ p{
 
 #user_selection{
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
+}
+
+#user_selection p{
+    margin-bottom: 33px;
+}
+
+#game_result_div{
+    height: 0px;
 }
 
 #game_outcome{
     visibility: hidden;
     font-size: x-large;
     font-weight: bold;
+    height: 0px;
+    margin: 0px;
+}
+
+#play_again{
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
 }
 
 #user_selection p{
